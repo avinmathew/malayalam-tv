@@ -112,7 +112,7 @@ foreach($xml['RSS']['CHANNEL']['ITEM'] as $item) {
     // iPad requires a different link
     echo "<a href='http://www.youtube.com/embed/{$id}?autoplay=1'>";
   } else {
-    echo "<a href='http://www.youtube.com/v/{$id}?autoplay=1'>";
+    echo "<a href='https://www.youtube.com/tv#/watch?v={$id}'>";
   }
   echo "<img src='http://img.youtube.com/vi/{$id}/0.jpg'>";
   echo "<h4>{$title}</h4>";
