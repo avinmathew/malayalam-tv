@@ -85,7 +85,7 @@ if (is_null($selected )) {
   $selected = "asianetindia";
 }
 
-$channels = array('asianetglobal'=>'Asianet', 'suryatvmalayalam'=>'Surya', 'amritatv'=>'Amrita', 'kairalionline'=>'Kairali', 'asianetnews'=>'Asianet News', 'suryanewstv'=>'Surya News', 'mazhavilmanorama'=>'Manorama', 'darshanatv'=>'Darshana', 'indiavisiononlive'=>'India Vision', 'jaihindonline'=>'Jaihind', 'jeevantvchannel'=>'Jeevan', 'mcntele'=>'MCN', 'peopletvonline'=>'People', 'reporterlivechannel'=>'Reporter', 'wetvonline'=>'We TV');
+$channels = array('asianetglobal'=>'Asianet', 'suryatvmalayalam'=>'Surya', 'amritatv'=>'Amrita', 'kairalionline'=>'Kairali', 'asianetnews'=>'Asianet News', 'mazhavilmanorama'=>'Manorama', 'indiavisiononlive'=>'India Vision', 'peopletvonline'=>'People', 'reporterlivechannel'=>'Reporter', 'wetvonline'=>'We TV', 'mcntele'=>'MCN', 'darshanatv'=>'Darshana', 'jaihindonline'=>'Jaihind', 'jeevantvchannel'=>'Jeevan');
 
 foreach($channels as $channel => $name) {
   echo "<li";
