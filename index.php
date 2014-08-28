@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Malayalam TV</title>
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malayalam TV</title>
     <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
     <style type="text/css">
@@ -100,9 +100,9 @@ foreach($channels as $channel => $name) {
       </div>
       <ul class="thumbnails">
 <?
-$xml = parseRSS("http://www.youtube.com/rss/user/{$selected}/videos.rss");
+$xml = parseRSS("http://gdata.youtube.com/feeds/base/users/{$selected}/uploads?alt=rss&amp;start-index=1&amp;max-results=24&amp;orderby=updated");
 foreach($xml['RSS']['CHANNEL']['ITEM'] as $item) {
-  $split = explode(":", $item['GUID']);
+  $split = explode("/", $item['GUID']);
   $id = end($split);
   $title = $item['TITLE'];
   $date = ago(strtotime($item['PUBDATE']));
