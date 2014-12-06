@@ -44,14 +44,19 @@ function parseRSS($url) {
       $item = $itemame[$i];
       $i--;
 
-      if(count($values[$i])>1){
+      if(isset($values[$i]) && count($values[$i])>1){
         $values[$i][$item][] = $feed;
       } else {
         $values[$i][$item] = $feed;
       }
 
     } else {
-      $values[$i][$value['tag']] = $value['value'];  
+      $val = null;
+      if (isset($value['value']))
+      {
+        $val = $value['value'];
+      }
+      $values[$i][$value['tag']] = $val;
     }
   }
 
@@ -80,7 +85,11 @@ function ago($time) {
   return "$difference $periods[$j] ago";
 }
 
-$selected = $_GET["channel"];
+$selected = null;
+if (isset($_GET["channel"]))
+{
+  $selected = $_GET["channel"];
+}
 if (is_null($selected )) {
   $selected = "asianetindia";
 }
