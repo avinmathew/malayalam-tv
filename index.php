@@ -15,6 +15,8 @@ html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}a:fo
       <div class="navbar">
         <div class="navbar-inner">
           <ul class="nav">
+            <li><a href="http://www.hotstar.com/#!/asianet-895">Asianet</a></li>
+            <li><a href="http://streams.yupptv.com/freechannelplayer.aspx?id=144">Asianet News (Live)</a></li>
 <?
 function parseRSS($url) { 
   $feedeed = implode('', file($url));
@@ -91,10 +93,10 @@ if (isset($_GET["channel"]))
   $selected = $_GET["channel"];
 }
 if (is_null($selected )) {
-  $selected = "asianetindia";
+  $selected = "suryatvmalayalam";
 }
 
-$channels = array('asianetglobal'=>'Asianet', 'suryatvmalayalam'=>'Surya', 'amritatv'=>'Amrita', 'kairalionline'=>'Kairali', 'asianetnews'=>'Asianet News', 'mazhavilmanorama'=>'Manorama', 'indiavisiononlive'=>'India Vision', 'peopletvonline'=>'People', 'reporterlivechannel'=>'Reporter', 'wetvonline'=>'We TV', 'mcntele'=>'MCN', 'darshanatv'=>'Darshana', 'jaihindonline'=>'Jaihind', 'jeevantvchannel'=>'Jeevan');
+$channels = array('suryatvmalayalam'=>'Surya', 'amritatv'=>'Amrita', 'kairalionline'=>'Kairali', 'asianetnews'=>'Asianet News', 'mazhavilmanorama'=>'Manorama', 'indiavisiononlive'=>'India Vision', 'peopletvonline'=>'People', 'reporterlivechannel'=>'Reporter', 'wetvonline'=>'We TV', 'mcntele'=>'MCN', 'darshanatv'=>'Darshana', 'jaihindonline'=>'Jaihind', 'jeevantvchannel'=>'Jeevan');
 
 foreach($channels as $channel => $name) {
   echo "<li";
