@@ -17,7 +17,7 @@ html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}a:fo
           <ul class="nav">
             <li><a href="http://www.hotstar.com/#!/asianet-895">Asianet</a></li>
             <li><a href="http://streams.yupptv.com/freechannelplayer.aspx?id=144">Asianet News (Live)</a></li>
-<?
+<?php
 function parseRSS($url) { 
   $feedeed = implode('', file($url));
   $parser = xml_parser_create();
@@ -110,7 +110,7 @@ foreach($channels as $channel => $name) {
         </div>
       </div>
       <ul class="thumbnails">
-<?
+<?php
 $xml = parseRSS("http://gdata.youtube.com/feeds/base/users/{$selected}/uploads?alt=rss&amp;start-index=1&amp;max-results=24&amp;orderby=updated");
 foreach($xml['RSS']['CHANNEL']['ITEM'] as $item) {
   $split = explode("/", $item['GUID']);
@@ -137,7 +137,7 @@ foreach($xml['RSS']['CHANNEL']['ITEM'] as $item) {
     </div>
   </body>
 </html>
-<?
+<?php
 // Log channel access
 //$log = $selected . "\t" . date("c") . "\n";
 //file_put_contents("selected.log", $log, FILE_APPEND | LOCK_EX);
