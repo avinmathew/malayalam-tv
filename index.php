@@ -111,12 +111,11 @@ foreach($channels as $channel => $name) {
       </div>
       <ul class="thumbnails">
 <?php
-$xml = parseRSS("http://gdata.youtube.com/feeds/base/users/{$selected}/uploads?alt=rss&amp;start-index=1&amp;max-results=24&amp;orderby=updated");
-foreach($xml['RSS']['CHANNEL']['ITEM'] as $item) {
-  $split = explode("/", $item['GUID']);
-  $id = end($split);
+$xml = parseRSS("https://www.youtube.com/feeds/videos.xml?user={$selected}");
+foreach($xml['FEED']['ENTRY'] as $item) {
+  $id = $item['YT:VIDEOID'];
   $title = $item['TITLE'];
-  $date = ago(strtotime($item['PUBDATE']));
+  $date = ago(strtotime($item['PUBLISHED']));
   echo "<li class='span4'>";
   echo "<div class='thumbnail'>";
   if(strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false) {
